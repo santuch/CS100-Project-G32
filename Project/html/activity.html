@@ -32,15 +32,10 @@
     <label for="name">ชื่อ:</label>
     <input type="text" id="name" name="name" required>
     </div>
-
-    <div class="form-group">
-    <label for="email">อีเมล:</label>
-    <input type="email" id="email" name="email" required>
-    </div>
     
     <div class="form-group">
-    <label for="studentID">Student ID</label>
-    <input type="text" id="studentID" name="studentID" required>
+    <label for="stuid">Student ID</label>
+    <input type="text" id="stuid" name="stuid" required>
     </div>
 
     <div class="form-group">
@@ -49,13 +44,13 @@
     </div>
     
     <div class="form-group">
-    <label for="workTitle">Work/Activity Title</label>
-    <input type="text" id="workTitle" name="workTitle" />
+    <label for="activity">Work/Activity Title</label>
+    <input type="text" id="activity" name="activity" />
     </div>
 
     <div class="form-group">
-    <label for="activityType">Type of Work/Activity</label>
-    <select id="activityType" name="activityType">
+    <label for="type">Type of Work/Activity</label>
+    <select id="type" name="type">
         <option value="" disabled selected>Select an option</option>
         <option value="Course">Course</option>
         <option value="Activity">Activity</option>
@@ -68,8 +63,8 @@
     </div>
 
     <div class="form-group">
-    <label for="academicYear">Academic Year</label>
-    <select id="academicYear" name="academicYear">
+    <label for="academicyear">Academic Year</label>
+    <select id="academicyear" name="academicyear">
         <option value="" disabled selected>Select an option</option>
         <option value="2561">2561</option>
         <option value="2562">2562</option>
@@ -92,12 +87,12 @@
 
     <div class="form-group">
     <label for="startDate">Start Date/Time</label>
-    <input type="datetime-local" id="startDate" name="startDate" />
+    <input type="datetime-local" id="startdate" name="startdate" />
     </div>
 
     <div class="form-group">
     <label for="endDate">End Date/Time</label>
-    <input type="datetime-local" id="endDate" name="endDate" />
+    <input type="datetime-local" id="enddate" name="enddate" />
     </div>
 
     <div class="form-group">
@@ -111,7 +106,7 @@
     </div>
 
 
-    <button id="submitbutton" type="button" onclick="submitForm()">Submit</button>
+    <button type="button" onclick="submitForm()">Submit</button>
   </form>
 </div>
 
