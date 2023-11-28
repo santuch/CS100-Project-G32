@@ -1,55 +1,44 @@
-/* Common styles for all screen sizes */
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Kdam Thmor Pro', sans-serif;
+    font-family: Kdam Thmor Pro;
 }
-
-:root {
-    --main-color: #F2F3F4;
-    --header-color: #5DADE2;
-    --font-color: #1C2833;
-    --intro-background-color: #21618C;
-    --intro-font-color: #ffffff;
+:root{
+    --main-color:#F2F3F4;
+    --header-color:#5DADE2;
+    --font-color:#1C2833;
+    --intro-background-color:#21618C;
+    --intro-font-color:#ffffff;
 }
-
-body {
+body{
     background-color: var(--main-color);
 }
-
-.bar {
+.bar{
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--header-color);
+    background-color:var(--header-color) ;
     padding: 20px;
 }
-
-/* Header styles */
-.bar h1 {
+.bar h1{
     margin-left: 120px;
     font-size: 50px;
     color: var(--font-color);
 }
-
 .bar .navigation {
-    display: flex;
-    align-items: center;
-    padding-right: 20px;
+    padding-right: 85px;
 }
-
-.bar .navigation a {
-    margin-right: 20px;
-    white-space: nowrap; /* Prevents the link from breaking into multiple lines */
+.bar .navigation a{
+    margin-right: 80px;
     text-decoration: none;
     font-size: 25px;
     color: var(--font-color);
     font-weight: bold;
-    transition: all 0.3s;
+    transition:all 0.3s;
 }
-
-.bar .navigation a:hover {
+.bar .navigation a:hover{
     border: 1px solid var(--font-color);
     padding: 15px;
     border-radius: 15px;
@@ -59,11 +48,10 @@ body {
     font-weight: bold;
 }
 
-/* Member topic styles */
-.Member-topic {
+.Member-topic{
     border: 6px solid var(--font-color);
     border-radius: 15px;
-    background-color: var(--intro-background-color);
+    background-color:var(--intro-background-color) ;
     width: 25%;
     color: var(--header-color);
     margin: 20px;
@@ -71,14 +59,13 @@ body {
     text-align: center;
 }
 
-/* Box and Introduction styles */
-.box {
+.box{
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.introduction {
+.introduction{
     margin-bottom: 30px;
     color: var(--intro-font-color);
     display: flex;
@@ -90,95 +77,14 @@ body {
     border: 20px solid var(--font-color);
     border-radius: 15px;
 }
-
-.introduction .information {
+.introduction .information{
     padding: 15px;
 }
-
-.introduction hr {
+.introduction hr{
     width: 90%;
 }
-
-.introduction img {
+.introduction img{
     padding: 20px;
     width: 20%;
     border-radius: 30px;
-}
-
-/* Media queries for different screen sizes */
-
-/* Mobile-first approach, base styles for all sizes */
-@media only screen and (max-width: 480px) {
-    .bar h1 {
-        margin-left: 10px;
-        font-size: 20px;
-    }
-
-    .bar .navigation {
-        padding-right: 10px;
-    }
-
-    .bar .navigation a {
-        margin-right: 10px;
-        font-size: 15px;
-    }
-
-    .Member-topic {
-        width: 80%;
-    }
-
-    .introduction {
-        width: 90%;
-    }
-}
-
-/* Tablet styles */
-@media only screen and (min-width: 481px) and (max-width: 768px) {
-    .bar h1 {
-        margin-left: 0%;
-        font-size: 25px;
-    }
-
-    .bar .navigation {
-        padding-right: 0%;
-    }
-
-    .bar .navigation a {
-        margin-right: 0%;
-        font-size: 20px;
-    }
-
-    .Member-topic {
-        width: 50%;
-        font-size: 10px;
-    }
-
-    .introduction {
-        width: 80%;
-    }
-}
-
-/* Desktop styles */
-@media only screen and (min-width: 769px) {
-    .bar h1 {
-        margin-left: 0%;
-        font-size: 50px;
-    }
-
-    .bar .navigation {
-        padding-right: 0%;
-    }
-
-    .bar .navigation a {
-        margin-right: 0%;
-        font-size: 25px;
-    }
-
-    .Member-topic {
-        width: 50%;
-    }
-
-    .introduction {
-        width: 150vh;
-    }
 }
