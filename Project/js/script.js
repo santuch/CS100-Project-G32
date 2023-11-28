@@ -15,11 +15,11 @@ function submitForm() {
   // ตรวจสอบว่าทั้งชื่อและอีเมลถูกกรอกหรือไม่
   if (name && stuid && email && activity && type && academicyear && semester && startdate && enddate && location && description) {
     // สร้าง HTML สำหรับแสดงผล
-    var outputHtml = "<h1>" + activity +"</h1>";
+    var outputHtml = "<div class=\"outputdecoration\"><h1>" + activity +"</h1>";
     outputHtml += "<h3>" + type +"</h3>";
     outputHtml += "<p>" + description +"</p>";
     outputHtml += "<p>" + location + " " + startdate + " " + enddate +"</p>";
-    outputHtml += "<p>" + email +"</p>";
+    outputHtml += "<p>" + email +"</p>"+"</div>";
     alert("Firstname and Lastname : " + name +"\nStudent ID : " + stuid +"\nUniversity Email : " + email +"\nWork/Activity Title : " 
     + activity +"\nType of Work/Activity : " + type +"\nAcademic Year : " + academicyear +"\nSemester : " + semester + "\n Start Date/Time : " 
     + startdate +"\nEnd Date/Time : " + enddate +"\nLocation : " + location +"\nDescription : " + description);
