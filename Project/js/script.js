@@ -1,14 +1,25 @@
 function submitForm() {
   // รับค่าจากฟอร์ม
   var name = document.getElementById("name").value;
+  var stuid = document.getElementById("stuid").value;
   var email = document.getElementById("email").value;
+  var activity = document.getElementById("activity").value;
+  var type = document.getElementById("type").value;
+  var academicyear = document.getElementById("academicyear").value;
+  var semester = document.getElementById("semester").value;
+  var startdate = document.getElementById("startdate").value;
+  var enddate = document.getElementById("enddate").value;
+  var location = document.getElementById("location").value;
+  var description = document.getElementById("description").value;
 
   // ตรวจสอบว่าทั้งชื่อและอีเมลถูกกรอกหรือไม่
-  if (name && email) {
+  if (name && stuid && email && activity && type && academicyear && semester && startdate && enddate && location && description) {
     // สร้าง HTML สำหรับแสดงผล
     var outputHtml = "<p>ชื่อ: " + name + "</p>";
     outputHtml += "<p>อีเมล: " + email + "</p>";
-    alert("ชื่อ : " + name +"\nemail : " + email);
+    alert("Firstname and Lastname : " + name +"\nStudent ID : " + stuid +"\nUniversity Email : " + email +"\nWork/Activity Title : " 
+    + activity +"\nType of Work/Activity : " + type +"\nAcademic Year : " + academicyear +"\nSemester : " + semester + "\n Start Date/Time : " 
+    + startdate +"\nEnd Date/Time : " + enddate +"\nLocation" + location +"\nDescription : " + description);
     var outputDiv = document.getElementById("output");
     outputDiv.innerHTML += outputHtml;
 
