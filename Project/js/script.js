@@ -234,16 +234,17 @@ function submitForm() {
 const outputHtml = `
 <div class="outputdecoration" class="form-group">
   <hr><br>
-  <h1>ชื่อกิจกรรม: ${activity}</h1>
-  <h3>รายละเอียดกิจกรรม :</h3>
-  <p>ประเภทกิจกรรม: ${type}</p>
-  <p>คำอธิบายกิจกรรม: ${description}</p>
-  <p>สถานที่: ${location}</p>
-  <p>ปีการศึกษา: ${academicyear} ภาคการศึกษา: ${semester}</p>
-  <p>ระยะเวลาการทำกิจกรรม: ${startdate}  ถึง  ${enddate}</p>
-  <p>ชื่อนักศึกษา: ${name}</p>
-  <p>รหัสนักศึกษา: ${stuid}</p>
-  <p>อีเมลนักศึกษา: ${email}</p><br>
+  <h1><b>Activityname:</b> ${activity}</h1>
+  <h3><b>Activity Details:</b></h3>
+  <br>
+  <p><b>Activity type:</b> ${type}</p>
+  <p><b>Description:</b> ${description}</p>
+  <p><b>Place:</b> ${location}</p>
+  <p><b>Academic year:</b> ${academicyear} <b>ภาคการศึกษา:</b> ${semester}</p>
+  <p><b>Acticity Duration:</b> from ${startdate}  to  ${enddate}</p>
+  <p><b>Name:</b> ${name}</p>
+  <p><b>StudentID:</b> ${stuid}</p>
+  <p><b>StudentEmail:</b> ${email}</p><br>
   <hr>
 </div>
 `;
