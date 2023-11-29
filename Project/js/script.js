@@ -44,6 +44,63 @@ function validateEmail() {
   return true;
 }
 
+// Function to validate activity title
+function validateActivity() {
+  const activityInput = document.getElementById("activity");
+  const errorElement = document.getElementById("activityError");
+
+  if (activityInput.value === "") {
+    errorElement.textContent = "Please enter an activity title.";
+    return false;
+  } else {
+    errorElement.textContent = "";
+  }
+  return true;
+}
+
+// Function to validate location
+function validateLocation() {
+  const locationInput = document.getElementById("location");
+  const errorElement = document.getElementById("locationError");
+
+  if (locationInput.value === "") {
+    errorElement.textContent = "Please enter the location.";
+    return false;
+  } else {
+    errorElement.textContent = "";
+  }
+  return true;
+}
+
+// Function to validate description
+function validateDescription() {
+  const descriptionInput = document.getElementById("description");
+  const errorElement = document.getElementById("descriptionError");
+
+  if (descriptionInput.value === "") {
+    errorElement.textContent = "Please enter a description.";
+    return false;
+  } else {
+    errorElement.textContent = "";
+  }
+  return true;
+}
+
+function submitForm() {
+  // Check if all required fields are filled
+  if (
+    !validateName() ||
+    !validateStudentID() ||
+    !validateEmail() ||
+    !validateActivity() ||
+    !validateLocation() ||
+    !validateDescription()
+  ) {
+    alert("Please fill in all required fields.");
+    return;
+  }
+}
+
 // Add event listeners for input events on required fields
 const nameInput = document.getElementById("name");
 nameInput.addEventListener("input", validateName);
