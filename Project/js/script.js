@@ -256,10 +256,12 @@ const outputHtml = `
 const body = document.querySelector('body');
 const toggle = document.getElementById("toggle");
 const topic = document.querySelector(".Member-topic");
+const Bar = document.querySelector(".bar");
 toggle.onclick = function changeTheme(){
   toggle.classList.toggle('active');//element.classList.add/remove/toggle
   body.classList.toggle('active');
   topic.classList.toggle('active');
+  Bar.classList.toggle('active');
 }
 
 function changeLanguage(language) {
