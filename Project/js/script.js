@@ -73,12 +73,30 @@ function submitForm() {
   const enddate = document.getElementById("enddate").value;
   const location = document.getElementById("location").value;
   const description = document.getElementById("description").value;
+  // Generate alert message
+  const alertMessage = `
+    Firstname and Lastname: ${name}
+    Student ID: ${stuid}
+    University Email: ${email}
+    Work/Activity Title: ${activity}
+    Type of Work/Activity: ${type}
+    Academic Year: ${academicyear}
+    Semester: ${semester}
+    Start Date/Time: ${startdate}
+    End Date/Time: ${enddate}
+    Location: ${location}
+    Description: ${description}
+  `;
+
+  // Display alert message
+  alert(alertMessage);
 
   // Generate output HTML
   const outputHtml = `
     <div class="outputdecoration">
       <h1>ชื่อกิจกรรม: ${activity}</h1>
-      <h3>ประเภทกิจกรรม: ${type}</h3>
+      <h3>รายละเอียดกิจกรรม :</h3>
+      <p>ประเภทกิจกรรม: ${type}</p>
       <p>คำอธิบายกิจกรรม: ${description}</p>
       <p>สถานที่: ${location}</p>
       <p>ปีการศึกษา: ${academicyear} ภาคการศึกษา: ${semester}</p>
