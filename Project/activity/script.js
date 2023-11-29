@@ -160,6 +160,7 @@ async function submitForm(event) {
 
       // Display success message with formatted data
       alert(responseData.message + "\n" + formattedData);
+
       document.getElementById("myForm").reset();
     } else {
       console.error("Failed to submit form data.");
@@ -181,4 +182,3 @@ document
   .getElementById("studentID")
   .addEventListener("input", validateStudentID);
 document.getElementById("email").addEventListener("input", validateEmail);
-
