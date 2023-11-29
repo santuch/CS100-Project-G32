@@ -319,8 +319,8 @@ body {
     position: relative;
     left: 55px;
     display: block;
-    width: 100px;
-    height: 50px;
+    width: 95px;
+    height: 45px;
     border-radius:160px;
     background: #fff;
     cursor: pointer;
@@ -342,8 +342,8 @@ body {
     padding-left:10px ;
     top: 0;
     left: 0;
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     background: linear-gradient(to bottom,#444 ,var(--main-color));
     border-radius :50%;
     transform: scale(0.9);
@@ -354,8 +354,8 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     background: linear-gradient(to bottom, var(--main-color),#222);
     border-radius :50%;
     transform: scale(0.9);
