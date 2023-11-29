@@ -72,6 +72,22 @@ function validateLocation() {
   return true;
 }
 
+//Function to validate Start-End date
+function validateDates() {
+  const startdate = document.getElementById("startdate").value;
+  const enddate = document.getElementById("enddate").value;
+
+  const startDate = new Date(startdate);
+  const endDate = new Date(enddate);
+
+  if (endDate < startDate) {
+    alert("End date cannot be earlier than start date.");
+    return false;
+  }
+
+  return true;
+}
+
 // Function to validate description
 function validateDescription() {
   const descriptionInput = document.getElementById("description");
@@ -94,6 +110,7 @@ function submitForm() {
     !validateEmail() ||
     !validateActivity() ||
     !validateLocation() ||
+    !validateDates ||
     !validateDescription()
   ) {
     alert("Please fill in all required fields.");
