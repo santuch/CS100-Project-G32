@@ -266,9 +266,67 @@ body {
     max-width: 100%; /* Default width for larger screens */
     overflow: auto; /* Enable vertical scrolling */
     white-space: normal; /* Allow text to wrap onto next line */
-    margin: 20px auto;
     padding: 20px;
-    background-color: #ffffff;
-    border: 1px solid #000000;
     border-radius: 5px;
   }
+ 
+
+  body.active{
+    background-color: rgb(43, 43, 43);
+    color: var(--main-color);
+}
+
+#change-title{
+    padding: 10px 30px;
+}
+
+#toggle{
+    position: relative;
+    left: 55px;
+    display: block;
+    width: 100px;
+    height: 50px;
+    border-radius:160px;
+    background: #fff;
+    cursor: pointer;
+    transition: .5s;
+    box-shadow: inset 0 8px 60px rgba(0, 0, 0, 0.1),
+                inset 0 8px 8px rgba(0, 0, 0, 0.1),
+                inset 0 -4px 4px rgba(0, 0, 0, 0.1);
+}
+
+#toggle.active{
+    background-color: #222;
+    box-shadow: inset 0px 6px 60px rgba(0,0,0,0.1),
+                inset 0px 2px 8px rgba(0,0,0,0.1),
+                inset 0px -4px 4px rgba(0,0,0,0.1);
+}
+
+#toggle .indicator{
+    position: absolute;
+    padding-left:10px ;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(to bottom,#444 ,var(--main-color));
+    border-radius :50%;
+    transform: scale(0.9);
+    transition: .5s;
+}
+
+#toggle.active .indicator{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(to bottom, var(--main-color),#222);
+    border-radius :50%;
+    transform: scale(0.9);
+    transition: .5s;
+}
+
+#toggle.active .indicator{
+    left: 50px;
+}

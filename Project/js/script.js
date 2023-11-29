@@ -229,24 +229,33 @@ function submitForm() {
   // Display alert message
   alert(alertMessage);
 
-  // Generate output HTML
-  const outputHtml = `
-    <div class="outputdecoration" class="form-group">
-      <h1>ชื่อกิจกรรม: ${activity}</h1>
-      <h3>รายละเอียดกิจกรรม :</h3>
-      <p>ประเภทกิจกรรม: ${type}</p>
-      <p>คำอธิบายกิจกรรม: ${description}</p>
-      <p>สถานที่: ${location}</p>
-      <p>ปีการศึกษา: ${academicyear} ภาคการศึกษา: ${semester}</p>
-      <p>ระยะเวลาการทำกิจกรรม: ${startdate}  ถึง  ${enddate}</p>
-      <p>ชื่อนักศึกษา: ${name}</p>
-      <p>รหัสนักศึกษา: ${stuid}</p>
-      <p>อีเมลนักศึกษา: ${email}</p>
-    </div>
-  `;
+  // Generate output HTML 
+const outputHtml = `
+<div class="outputdecoration" class="form-group">
+  <hr><br>
+  <h1>ชื่อกิจกรรม: ${activity}</h1>
+  <h3>รายละเอียดกิจกรรม :</h3>
+  <p>ประเภทกิจกรรม: ${type}</p>
+  <p>คำอธิบายกิจกรรม: ${description}</p>
+  <p>สถานที่: ${location}</p>
+  <p>ปีการศึกษา: ${academicyear} ภาคการศึกษา: ${semester}</p>
+  <p>ระยะเวลาการทำกิจกรรม: ${startdate}  ถึง  ${enddate}</p>
+  <p>ชื่อนักศึกษา: ${name}</p>
+  <p>รหัสนักศึกษา: ${stuid}</p>
+  <p>อีเมลนักศึกษา: ${email}</p><br>
+  <hr>
+</div>
+`;
 
   // Display output in the output div
   const outputDiv = document.getElementById("output");
   outputDiv.innerHTML += outputHtml;
+}
+//Add change theme function (dark mode and light mode)
+const body = document.querySelector('body');
+const toggle = document.getElementById("toggle");
+toggle.onclick = function changeTheme(){
+  toggle.classList.toggle('active');//element.classList.add/remove/toggle
+  body.classList.toggle('active');
 }
 
