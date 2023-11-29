@@ -264,7 +264,8 @@ body {
 
   .outputdecoration {
     max-width: 100%; /* Default width for larger screens */
-    resize: vertical; /* Allow vertical resizing */
+    overflow: auto; /* Enable vertical scrolling */
+    white-space: normal; /* Allow text to wrap onto next line */
     margin: 20px auto;
     padding: 20px;
     background-color: #ffffff;
