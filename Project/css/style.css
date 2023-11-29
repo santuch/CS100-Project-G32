@@ -263,7 +263,8 @@ body {
   }
 
   .outputdecoration {
-    max-width: 1000px;
+    max-width: 100%; /* Default width for larger screens */
+    resize: vertical; /* Allow vertical resizing */
     margin: 20px auto;
     padding: 20px;
     background-color: #ffffff;

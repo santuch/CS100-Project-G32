@@ -93,7 +93,7 @@ function submitForm() {
 
   // Generate output HTML
   const outputHtml = `
-    <div class="outputdecoration">
+    <div class="outputdecoration" class="form-group">
       <h1>ชื่อกิจกรรม: ${activity}</h1>
       <h3>รายละเอียดกิจกรรม :</h3>
       <p>ประเภทกิจกรรม: ${type}</p>
