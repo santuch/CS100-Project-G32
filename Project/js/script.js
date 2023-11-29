@@ -1,3 +1,4 @@
+
 // Function to validate Firstname and Lastname
 function validateName() {
   const fullnameInput = document.getElementById("name");
@@ -193,7 +194,7 @@ function submitForm() {
   !validateSemester() || 
   !validateDates() ||
   !validateLocation() ||
-  !validateDescription
+  !validateDescription()
   ) {
     alert("Please fill in all required fields.");
     return;
@@ -261,3 +262,74 @@ toggle.onclick = function changeTheme(){
   topic.classList.toggle('active');
 }
 
+function changeLanguage(language) {
+  // Get all form labels
+  const labels = document.querySelectorAll("form label");
+
+  // Get all error messages
+  const errorMessages = document.querySelectorAll(".error-message");
+
+  // Get the submit button
+  const submitButton = document.querySelector("button[type='button']");
+
+  // Change form labels based on the selected language
+  for (const label of labels) {
+    const labelText = label.textContent;
+
+    if (language === "thai") {
+      if (labelText === "Name:") {
+        label.textContent = "ชื่อ-นามสกุล";
+      } else if (labelText === "Student ID:") {
+        label.textContent = "รหัสประจำตัวนักศึกษา";
+      } else if (labelText === "University Email:") {
+        label.textContent = "อีเมลมหาวิทยาลัย";
+      } else if (labelText === "Work/Activity Title:") {
+        label.textContent = "ชื่อกิจกรรม";
+      } else if (labelText === "Type of Work/Activity:") {
+        label.textContent = "ประเภทกิจกรรม";
+      } else if (labelText === "Academic Year:") {
+        label.textContent = "ปีการศึกษา";
+      } else if (labelText === "Semester:") {
+        label.textContent = "ภาคการศึกษา";
+      } else if (labelText === "Start Date/Time:") {
+        label.textContent = "วันที่และเวลาเริ่มต้นกิจกรรม";
+      } else if (labelText === "End Date/Time:") {
+        label.textContent = "วันที่และเวลาสิ้นสุดกิจกรรม";
+      } else if (labelText === "Location:") {
+        label.textContent = "สถานที่จัดกิจกรรม";
+      } else if (labelText === "Description:") {
+        label.textContent = "รายละเอียดกิจกรรม";
+      }
+    } else if (language === "english") {
+      if (labelText === "ชื่อ-นามสกุล") {
+        label.textContent = "Name:";
+      } else if (labelText === "รหัสประจำตัวนักศึกษา") {
+        label.textContent = "Student ID:";
+      } else if (labelText === "อีเมลมหาวิทยาลัย") {
+        label.textContent = "University Email:";
+      } else if (labelText === "ชื่อกิจกรรม") {
+        label.textContent = "Work/Activity Title:";
+      } else if (labelText === "ประเภทกิจกรรม") {
+        label.textContent = "Type of Work/Activity:";
+      } else if (labelText === "ปีการศึกษา") {
+        label.textContent = "Academic Year:";
+      } else if (labelText === "ภาคการศึกษา") {
+        label.textContent = "Semester:";
+      } else if (labelText === "วันที่และเวลาเริ่มต้นกิจกรรม") {
+        label.textContent = "Start Date/Time:";
+      } else if (labelText === "วันที่และเวลาสิ้นสุดกิจกรรม") {
+        label.textContent = "End Date/Time:";
+      } else if (labelText === "สถานที่จัดกิจกรรม") {
+        label.textContent = "Location:";
+      } else if (labelText === "รายละเอียดกิจกรรม") {
+        label.textContent = "Description:";
+      }
+    }
+  }
+  // Change submit button text based on the selected language
+  if (language === "thai") {
+    submitButton.textContent = "บันทึกข้อมูล";
+  } else if (language === "english") {
+    submitButton.textContent = "Submit";
+  }
+}

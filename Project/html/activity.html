@@ -26,37 +26,43 @@
         <div id="toggle">
             <i class="indicator"></i>
         </div> 
+        <div class="change-language">
+            <button class="button1" onclick="changeLanguage('thai')">Change to Thai</button>
+            <button class="button1"onclick="changeLanguage('english')">Change to English</button>
+        </div>
+
+
 <body>
 
 <div class="form-container">
-    <form id="myForm">
+  <form id="myForm">
     <div class="form-group">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required>
-    <span id="fullnameError" class="error"></span>
-    </div>
-    
-    <div class="form-group">
-    <label for="stuid">Student ID</label>
-    <input type="text" id="stuid" name="stuid" required>
-    <span id="studentIDError" class="error"></span>
+      <label id="name-label">Name:</label>
+      <input type="text" id="name" name="name" required>
+      <span id="fullnameError" class="error"></span>
     </div>
 
     <div class="form-group">
-    <label for="email">University Email</label>
-    <input type="email" id="email" name="email" required>
-    <span id="emailError" class="error"></span>
-    </div>
-    
-    <div class="form-group">
-    <label for="activity">Work/Activity Title</label>
-    <input type="text" id="activity" name="activity" >
-    <span id="activityError" class="error"></span>
+      <label id="stuid-label">Student ID:</label>
+      <input type="text" id="stuid" name="stuid" required>
+      <span id="studentIDError" class="error"></span>
     </div>
 
     <div class="form-group">
-    <label for="type">Type of Work/Activity</label>
-    <select id="type" name="type" >
+      <label id="email-label">University Email:</label>
+      <input type="email" id="email" name="email" required>
+      <span id="emailError" class="error"></span>
+    </div>
+
+    <div class="form-group">
+      <label id="activity-label">Work/Activity Title:</label>
+      <input type="text" id="activity" name="activity">
+      <span id="activityError" class="error"></span>
+    </div>
+
+    <div class="form-group">
+      <label id="type-label">Type of Work/Activity:</label>
+      <select id="type" name="type" required>
         <option value="" disabled selected>Select an option</option>
         <option value="Course">Course</option>
         <option value="Activity">Activity</option>
@@ -65,58 +71,55 @@
         <option value="Sports">Sports</option>
         <option value="Competition">Competition</option>
         <option value="Computer Science">Computer Science</option>
-    </select>
-    <span id="typeError" class="error"></span>
+      </select>
+      <span id="typeError" class="error"></span>
     </div>
 
     <div class="form-group">
-        <label for="academicyear">Academic Year</label>
-        <select id="academicyear" name="academicyear" required>
-            <option value="" disabled selected>Select an option</option>
-            <option value="2561">2561</option>
-            <option value="2562">2562</option>
-            <option value="2563">2563</option>
-            <option value="2564">2564</option>
-            <option value="2565">2565</option>
-            <option value="2566">2566</option>
-        </select>
-        <span id="academicyearError" class="error"></span>
+      <label id="academicyear-label">Academic Year:</label>
+      <select id="academicyear" name="academicyear" required>
+        <option value="" disabled selected>Select an option</option>
+        <option value="2561">2561</option>
+        <option value="2562">2562</option>
+        <option value="2563">2563</option>
+        <option value="2564">2564</option>
+        <option value="2565">2565</option>
+        <option value="2566">2566</option>
+      </select>
+      <span id="academicyearError" class="error"></span>
     </div>
-    
 
     <div class="form-group">
-        <label for="semester">Semester</label>
-        <select id="semester" name="semester" required>
-            <option value="" disabled selected>Select an option</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="Summer">Summer</option>
-        </select>
-        <span id="semesterError" class="error"></span>
+      <label id="semester-label">Semester:</label>
+      <select id="semester" name="semester" required>
+        <option value="" disabled selected>Select an option</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="Summer">Summer</option>
+      </select>
+      <span id="semesterError" class="error"></span>
     </div>
-    
 
     <div class="form-group">
-        <label for="startDate">Start Date/Time</label>
-        <input type="datetime-local" id="startdate" name="startdate" required>
-        <span id="startDateError" class="error"></span>
+      <label id="startDate-label">Start Date/Time:</label>
+      <input type="datetime-local" id="startdate" name="startdate" required>
+      <span id="startDateError" class="error"></span>
     </div>
-    
-    <div class="form-group">
-        <label for="endDate">End Date/Time</label>
-        <input type="datetime-local" id="enddate" name="enddate" required>
-        <span id="endDateError" class="error"></span>
-    </div>
-    
 
     <div class="form-group">
-        <label for="location">Location</label>
-        <input type="text" id="location" name="location" required>
-        <span id="locationError" class="error"></span>
+      <label id="endDate-label">End Date/Time:</label>
+      <input type="datetime-local" id="enddate" name="enddate" required>
+      <span id="endDateError" class="error"></span>
     </div>
-    
+
     <div class="form-group">
-        <label for="description">Description</label>
+      <label id="location-label">Location:</label>
+      <input type="text" id="location" name="location" required>
+      <span id="locationError" class="error"></span>
+    </div>
+
+    <div class="form-group">
+      <label id="description-label">Description:</label>
         <textarea id="description" name="description" rows="4" required></textarea>
         <span id="descriptionError" class="error"></span>
     </div>
