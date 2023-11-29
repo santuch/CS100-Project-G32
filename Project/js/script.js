@@ -254,8 +254,10 @@ const outputHtml = `
 //Add change theme function (dark mode and light mode)
 const body = document.querySelector('body');
 const toggle = document.getElementById("toggle");
+const topic = document.querySelector(".Member-topic");
 toggle.onclick = function changeTheme(){
   toggle.classList.toggle('active');//element.classList.add/remove/toggle
   body.classList.toggle('active');
+  topic.classList.toggle('active');
 }
 

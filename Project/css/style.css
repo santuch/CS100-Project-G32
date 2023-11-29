@@ -35,6 +35,24 @@ body {
     background-color: var(--header-color);
     padding: 20px;
 }
+.bar.active {
+    background-color: var(--font-color);
+}
+.bar.active h1{
+    color: var(--header-color);
+}
+.bar.active .navigation a{
+    color: var(--header-color);
+}
+.bar.active .navigation a:hover {
+    border: 1px solid var(--header-color);
+    padding: 15px;
+    border-radius: 15px;
+    font-size: 30px;
+    background-color: var(--header-color);
+    color: var(--intro-font-color);
+    font-weight: bold;
+}
 
 /* Header styles */
 .bar h1 {
@@ -80,6 +98,11 @@ body {
     padding: 10px;
     text-align: center;
 }
+.Member-topic.active {
+    border: 6px solid var(--intro-background-color);
+    background-color: var(--font-color);
+    color: var(--header-color);
+}
 
 /* Box and Introduction styles */
 .box {
@@ -89,7 +112,7 @@ body {
 }
 
 .introduction {
-    margin-bottom: 30px;
+    margin: 30px;
     color: var(--intro-font-color);
     display: flex;
     flex-direction: column;
@@ -98,6 +121,18 @@ body {
     width: 150vh;
     background-color: var(--intro-background-color);
     border: 20px solid var(--font-color);
+    border-radius: 15px;
+}
+.introduction.active {
+    margin: 30px;
+    color: var(--intro-font-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 150vh;
+    background-color: var(--font-color);
+    border: 20px solid var(--intro-background-color);
     border-radius: 15px;
 }
 
