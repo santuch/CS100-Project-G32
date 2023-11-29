@@ -49,11 +49,74 @@ function validateActivity() {
   const activityInput = document.getElementById("activity");
   const errorElement = document.getElementById("activityError");
 
-  if (activityInput.value === "") {
+  if (activityInput.value.trim() === "" || activityInput.value === null) {
     errorElement.textContent = "Please enter an activity title.";
     return false;
   } else {
     errorElement.textContent = "";
+  }
+  return true;
+}
+
+function validateType() {
+  const typeInput = document.getElementById("type");
+  const errorElement = document.getElementById("typeError");
+
+  if (typeInput.value === "") {
+    errorElement.textContent = "Please select a type of work/activity.";
+    return false;
+  } else {
+    errorElement.textContent = "";
+  }
+  return true;
+}
+
+function validateAcademicYear() {
+  const academicyearInput = document.getElementById("academicyear");
+  const errorElement = document.getElementById("academicyearError");
+
+  if (academicyearInput.value === "") {
+    errorElement.textContent = "Please select an academic year.";
+    return false;
+  } else {
+    errorElement.textContent = "";
+  }
+  return true;
+}
+
+function validateSemester() {
+  const semesterInput = document.getElementById("semester");
+  const errorElement = document.getElementById("semesterError");
+
+  if (semesterInput.value === "") {
+    errorElement.textContent = "Please select a semester.";
+    return false;
+  } else {
+    errorElement.textContent = "";
+  }
+  return true;
+}
+
+function validateDates() {
+  const startDateInput = document.getElementById("startdate");
+  const endDateInput = document.getElementById("enddate");
+  const startDate = new Date(startDateInput.value);
+  const endDate = new Date(endDateInput.value);
+  const startDateError = document.getElementById("startDateError");
+  const endDateError = document.getElementById("endDateError");
+  if(startDateInput.value === "" || endDateInput.value === "") {
+    startDateError.textContent = "Please enter a start date.";
+    endDateError.textContent = "Please enter an end date.";
+    return false;
+  }
+  // Check if the end date is later than the start date
+  if (endDate <= startDate) {
+    startDateError.textContent = "Start date must be earlier than the end date.";
+    endDateError.textContent = "End date must be later than the start date.";
+    return false;
+  } else {
+    startDateError.textContent = "";
+    endDateError.textContent = "";
   }
   return true;
 }
@@ -72,22 +135,6 @@ function validateLocation() {
   return true;
 }
 
-//Function to validate Start-End date
-function validateDates() {
-  const startdate = document.getElementById("startdate").value;
-  const enddate = document.getElementById("enddate").value;
-
-  const startDate = new Date(startdate);
-  const endDate = new Date(enddate);
-
-  if (endDate < startDate) {
-    alert("End date cannot be earlier than start date.");
-    return false;
-  }
-
-  return true;
-}
-
 // Function to validate description
 function validateDescription() {
   const descriptionInput = document.getElementById("description");
@@ -102,22 +149,6 @@ function validateDescription() {
   return true;
 }
 
-function submitForm() {
-  // Check if all required fields are filled
-  if (
-    !validateName() ||
-    !validateStudentID() ||
-    !validateEmail() ||
-    !validateActivity() ||
-    !validateLocation() ||
-    !validateDates ||
-    !validateDescription()
-  ) {
-    alert("Please fill in all required fields.");
-    return;
-  }
-}
-
 // Add event listeners for input events on required fields
 const nameInput = document.getElementById("name");
 nameInput.addEventListener("input", validateName);
@@ -128,9 +159,42 @@ studentIDInput.addEventListener("input", validateStudentID);
 const emailInput = document.getElementById("email");
 emailInput.addEventListener("input", validateEmail);
 
+const activityInput = document.getElementById("activity");
+activityInput.addEventListener("input", validateActivity);
+
+const typeInput = document.getElementById("type");
+typeInput.addEventListener("change", validateType);
+
+const academicyearInput = document.getElementById("academicyear");
+academicyearInput.addEventListener("change", validateAcademicYear);
+
+const semesterInput = document.getElementById("semester");
+semesterInput.addEventListener("change", validateSemester);
+
+const startDateInput = document.getElementById("startdate");
+startDateInput.addEventListener("input", validateDates);
+
+const endDateInput = document.getElementById("enddate");
+endDateInput.addEventListener("input", validateDates);
+
+const locationInput = document.getElementById("location");
+locationInput.addEventListener("input", validateLocation);
+
+const descriptionInput = document.getElementById("description");
+descriptionInput.addEventListener("input", validateDescription);
 function submitForm() {
   // Check if all required fields are filled
-  if (!validateName() || !validateStudentID() || !validateEmail()) {
+  if (!validateName() || 
+  !validateStudentID() || 
+  !validateEmail() || 
+  !validateActivity() || 
+  !validateType() || 
+  !validateAcademicYear() || 
+  !validateSemester() || 
+  !validateDates() ||
+  !validateLocation() ||
+  !validateDescription
+  ) {
     alert("Please fill in all required fields.");
     return;
   }
@@ -185,3 +249,4 @@ function submitForm() {
   const outputDiv = document.getElementById("output");
   outputDiv.innerHTML += outputHtml;
 }
+
