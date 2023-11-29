@@ -1,38 +1,95 @@
+// Function to validate Firstname and Lastname
+function validateName() {
+  const fullnameInput = document.getElementById("name");
+  const names = fullnameInput.value.trim().split(" ");
+  const errorElement = document.getElementById("fullnameError");
+
+  if (names.length !== 2) {
+    errorElement.textContent = "Please enter both your Firstname and Lastname.";
+    return false;
+  } else {
+    errorElement.textContent = ""; // Clear the error message when valid
+  }
+  return true;
+}
+
+// Function to validate Student ID
+function validateStudentID() {
+  const studentIDInput = document.getElementById("stuid");
+  const studentIDPattern = /^\d{10}$/;
+  const errorElement = document.getElementById("studentIDError");
+
+  if (!studentIDPattern.test(studentIDInput.value)) {
+    errorElement.textContent = "Please enter a 10-digit Student ID.";
+    return false;
+  } else {
+    errorElement.textContent = ""; // Clear the error message when valid
+  }
+  return true;
+}
+
+// Function to validate University Email
+function validateEmail() {
+  const emailInput = document.getElementById("email");
+  const emailPattern = /^.+@dome\.tu\.ac\.th$/;
+  const errorElement = document.getElementById("emailError");
+
+  if (!emailPattern.test(emailInput.value)) {
+    errorElement.textContent =
+      "Please provide a valid university email in the format 'xxx.yyy@dome.tu.ac.th'.";
+    return false;
+  } else {
+    errorElement.textContent = ""; // Clear the error message when valid
+  }
+  return true;
+}
+
+// Add event listeners for input events on required fields
+const nameInput = document.getElementById("name");
+nameInput.addEventListener("input", validateName);
+
+const studentIDInput = document.getElementById("stuid");
+studentIDInput.addEventListener("input", validateStudentID);
+
+const emailInput = document.getElementById("email");
+emailInput.addEventListener("input", validateEmail);
+
 function submitForm() {
-  // รับค่าจากฟอร์ม
-  var name = document.getElementById("name").value;
-  var stuid = document.getElementById("stuid").value;
-  var email = document.getElementById("email").value;
-  var activity = document.getElementById("activity").value;
-  var type = document.getElementById("type").value;
-  var academicyear = document.getElementById("academicyear").value;
-  var semester = document.getElementById("semester").value;
-  var startdate = document.getElementById("startdate").value;
-  var enddate = document.getElementById("enddate").value;
-  var location = document.getElementById("location").value;
-  var description = document.getElementById("description").value;
+  // Check if all required fields are filled
+  if (!validateName() || !validateStudentID() || !validateEmail()) {
+    alert("Please fill in all required fields.");
+    return;
+  }
 
-  // ตรวจสอบว่าทั้งชื่อและอีเมลถูกกรอกหรือไม่
-  if (name && stuid && email && activity && type && academicyear && semester && startdate && enddate && location && description) {
-    // สร้าง HTML สำหรับแสดงผล
-    var outputHtml = "<div class=\"outputdecoration\"><h1>" + activity +"</h1>";
-    outputHtml += "<h3>" + type +"</h3>";
-    outputHtml += "<p>" + description +"</p>";
-    outputHtml += "<p>" + location + " " + startdate + " " + enddate +"</p>";
-    outputHtml += "<p>" + email +"</p>"+"</div>";
-    alert("Firstname and Lastname : " + name +"\nStudent ID : " + stuid +"\nUniversity Email : " + email +"\nWork/Activity Title : " 
-    + activity +"\nType of Work/Activity : " + type +"\nAcademic Year : " + academicyear +"\nSemester : " + semester + "\n Start Date/Time : " 
-    + startdate +"\nEnd Date/Time : " + enddate +"\nLocation : " + location +"\nDescription : " + description);
-    var outputDiv = document.getElementById("output");
-    outputDiv.innerHTML += outputHtml;
+  // Extract form values
+  const name = document.getElementById("name").value;
+  const stuid = document.getElementById("stuid").value;
+  const email = document.getElementById("email").value;
+  const activity = document.getElementById("activity").value;
+  const type = document.getElementById("type").value;
+  const academicyear = document.getElementById("academicyear").value;
+  const semester = document.getElementById("semester").value;
+  const startdate = document.getElementById("startdate").value;
+  const enddate = document.getElementById("enddate").value;
+  const location = document.getElementById("location").value;
+  const description = document.getElementById("description").value;
 
-    // เคลียร์ค่าในฟอร์ม
-    document.getElementById("myForm").reset();
+  // Generate output HTML
+  const outputHtml = `
+    <div class="outputdecoration">
+      <h1>ชื่อกิจกรรม: ${activity}</h1>
+      <h3>ประเภทกิจกรรม: ${type}</h3>
+      <p>คำอธิบายกิจกรรม: ${description}</p>
+      <p>สถานที่: ${location}</p>
+      <p>ปีการศึกษา: ${academicyear} ภาคการศึกษา: ${semester}</p>
+      <p>ระยะเวลาการทำกิจกรรม: ${startdate}  ถึง  ${enddate}</p>
+      <p>ชื่อนักศึกษา: ${name}</p>
+      <p>รหัสนักศึกษา: ${stuid}</p>
+      <p>อีเมลนักศึกษา: ${email}</p>
+    </div>
+  `;
 
-    // นำ div ลงมาด้านล่าง
-    outputDiv.scrollTop = outputDiv.scrollHeight;
-    } else {
-      // ถ้าไม่ได้กรอกทั้งชื่อและอีเมล
-      alert("กรุณากรอกข้อมูลให้ครบถ้วน");
-    }
+  // Display output in the output div
+  const outputDiv = document.getElementById("output");
+  outputDiv.innerHTML += outputHtml;
 }
