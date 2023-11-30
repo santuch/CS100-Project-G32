@@ -141,8 +141,14 @@ function validateDescription() {
   const descriptionInput = document.getElementById("description");
   const errorElement = document.getElementById("descriptionError");
 
+  const minLength = 5; // Set your minimum length requirement
+  const maxLength = 1000; // Set your maximum length requirement
+
   if (descriptionInput.value === "") {
     errorElement.textContent = "Please enter a description.";
+    return false;
+  } else if (descriptionInput.value.length < minLength || descriptionInput.value.length > maxLength) {
+    errorElement.textContent = `Description must be between ${minLength} and ${maxLength} characters.`;
     return false;
   } else {
     errorElement.textContent = "";
@@ -183,6 +189,10 @@ locationInput.addEventListener("input", validateLocation);
 
 const descriptionInput = document.getElementById("description");
 descriptionInput.addEventListener("input", validateDescription);
+
+const currentDate = new Date();
+const formattedDate = currentDate.toLocaleString();
+
 function submitForm() {
   // Check if all required fields are filled
   if (!validateName() || 
@@ -208,8 +218,8 @@ function submitForm() {
   const type = document.getElementById("type").value;
   const academicyear = document.getElementById("academicyear").value;
   const semester = document.getElementById("semester").value;
-  const startdate = document.getElementById("startdate").value;
-  const enddate = document.getElementById("enddate").value;
+  const startdate = document.getElementById("startdate").value.replace("T", " ");
+  const enddate = document.getElementById("enddate").value.replace("T", " ");
   const location = document.getElementById("location").value;
   const description = document.getElementById("description").value;
   // Generate alert message
@@ -245,6 +255,7 @@ const outputHtml = `
   <p><b>Name:</b> ${name}</p>
   <p><b>StudentID:</b> ${stuid}</p>
   <p><b>StudentEmail:</b> ${email}</p><br>
+  Form submitted on: ${formattedDate}
   <hr>
 </div>
 `;
