@@ -193,6 +193,35 @@ descriptionInput.addEventListener("input", validateDescription);
 const currentDate = new Date();
 const formattedDate = currentDate.toLocaleString();
 
+// Function to clear the form
+function clearForm() {
+  // Clear input values
+  document.getElementById("name").value = "";
+  document.getElementById("stuid").value = "";
+  document.getElementById("email").value = "";
+  document.getElementById("activity").value = "";
+  document.getElementById("type").value = "";
+  document.getElementById("academicyear").value = "";
+  document.getElementById("semester").value = "";
+  document.getElementById("startdate").value = "";
+  document.getElementById("enddate").value = "";
+  document.getElementById("location").value = "";
+  document.getElementById("description").value = "";
+
+  // Clear error messages
+  document.getElementById("fullnameError").textContent = "";
+  document.getElementById("studentIDError").textContent = "";
+  document.getElementById("emailError").textContent = "";
+  document.getElementById("activityError").textContent = "";
+  document.getElementById("typeError").textContent = "";
+  document.getElementById("academicyearError").textContent = "";
+  document.getElementById("semesterError").textContent = "";
+  document.getElementById("startDateError").textContent = "";
+  document.getElementById("endDateError").textContent = "";
+  document.getElementById("locationError").textContent = "";
+  document.getElementById("descriptionError").textContent = "";
+}
+
 function submitForm() {
   // Check if all required fields are filled
   if (!validateName() || 
@@ -250,7 +279,7 @@ const outputHtml = `
   <p><b>Activity type:</b> ${type}</p>
   <p><b>Description:</b> ${description}</p>
   <p><b>Place:</b> ${location}</p>
-  <p><b>Academic year:</b> ${academicyear} <b>ภาคการศึกษา:</b> ${semester}</p>
+  <p><b>Academic year:</b> ${academicyear} <b>semester:</b> ${semester}</p>
   <p><b>Acticity Duration:</b> from ${startdate}  to  ${enddate}</p>
   <p><b>Name:</b> ${name}</p>
   <p><b>StudentID:</b> ${stuid}</p>
@@ -263,6 +292,9 @@ const outputHtml = `
   // Display output in the output div
   const outputDiv = document.getElementById("output");
   outputDiv.innerHTML += outputHtml;
+
+  // Clear the form after submission
+  clearForm();
 }
 //Add change theme function (dark mode and light mode)
 const body = document.querySelector('body');
