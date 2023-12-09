@@ -312,9 +312,6 @@ function changeLanguage(language) {
   // Get all form labels
   const labels = document.querySelectorAll("form label");
 
-  // Get all error messages
-  const errorMessages = document.querySelectorAll(".error-message");
-
   // Get the submit button
   const submitButton = document.querySelector("button[type='button']");
 
